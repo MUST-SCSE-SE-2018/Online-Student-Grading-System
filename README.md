@@ -1,4 +1,4 @@
-# OnlineStudentGradingSystem-OSGS
+# Online-Student-Grading-System
 
 ### Development Environment
 + System : **Windows 10 64bits**

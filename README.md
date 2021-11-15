@@ -3,8 +3,7 @@
 ### Demo
 + Login Page ( Login.aspx )
 
->
-    The login page must be the initial page which has two different login types, which will handle the login event of both teachers and students. Users can login with correct ID and Password. The teachers' information is assigned by SSMS and students' information is assigned by a teacher.
+> The login page must be the initial page which has two different login types, which will handle the login event of both teachers and students. Users can login with correct ***ID*** and ***Password***. The teachers' information is assigned by ***SSMS*** and students' information is assigned by a teacher.
 
 ![login_teacher](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/login_teacher.png)
 
@@ -14,8 +13,7 @@
 
 + Student Account Management Page ( StuOverview.aspx, forteacher )
   
-> 
-    As we all known, a teacher probably have more than one courses. For example, Professor Lo has two courses CS101 and CS108. In this page, he can see all the students who take CS108 by choosing the DropDownList whose value is 'CS108'. By the way, teacher can also Edit the information of students ( includingName, Password, Email Address ) or Delete it if the student cancel the course.
+> As we all known, a teacher probably have more than one courses. For example, Professor Lo has two courses CS101 and CS108. In this page, he can see all the students who take CS108 by choosing the ***DropDownList*** whose value is 'CS108'. By the way, teacher can also ***Edit*** the information of students ( including Name, Password, Email Address ) or ***Delete*** it if the student cancel the course.
 
 ![student_account_management](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/student_account_management.png)
 
@@ -23,8 +21,7 @@
 
 + Assignment Management Page ( AssignmentManagement.aspx, for teacher )
 
-> 
-    Switching the RadioButtonList can enter into this page. We can see all the assignments that the teacher gives to each course, and also about assignment info ( name, weight, total question number, deadline, submit state ), student info, gradeinfo ( grade and comment ). Clicking the Select button to get more information.
+> Switching the ***RadioButtonList*** can enter into this page. We can see all the assignments that the teacher gives to each course, and also about assignment info ( name, weight, total question number, deadline, submit state ), student info, gradeinfo ( grade and comment ). Clicking the ***Select*** button to get more information.
 
 ![assignment_management](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/assignment_management.png)
 
@@ -32,8 +29,7 @@
 
 + Assignment Marking Page ( AssignmentMarking.aspx, for teacher )
 
-> 
-    It is about assignment and student information, all the questions and studentanswers ( if have ) will be displayed. The teacher can give comment and a grade, the data will be updated in the previous page.
+> It is about assignment and student information, all the questions and studentanswers ( if have ) will be displayed. The teacher can give comment and a grade, the data will be updated in the previous page.
 
 ![assignment_marking](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/assignment_marking.png)
 
@@ -41,8 +37,7 @@
 
 + Assignment Creating Page ( AddNewAssignment.aspx, for teacher )
 
-> 
-    To create a new assignment, the teacher can enter information about this assignment, also choose to add or delete a question, which implements the variability of the question number.
+> To create a new assignment, the teacher can enter information about this assignment, also choose to add or delete a question, which implements the variability of the question number.
 
 ![assignment_add](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/assignment_add.png)
 
@@ -50,8 +45,7 @@
 
 + Register Page ( RegisterNew.aspx, for teacher )
 
-> 
-    The page is used for course register or a new student register, the teacher can select the register type ( Student Register for a new student, Course Register for a student who have not taken the course ) and add information into the database.
+> The page is used for course register or a new student register, the teacher can select the register type ( Student Register for a new student, Course Register for a student who have not taken the course ) and add information into the database.
 
 ![register_course](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/register_course.png)
 
@@ -61,8 +55,7 @@
 
 + Student Assignment Page ( AssignmentOverview.aspx, for student )
 
-> 
-    After logging in as a student, you will enter into this page. For each course you have taken, you can see each of the assignment info ( weight, total question number, deadline, grade, submission state [ Y for yes/N for no ], teacher's comment ) and the GPA will be computed and displayed automatically.
+> After logging in as a student, you will enter into this page. For each course you have taken, you can see each of the assignment info ( weight, total question number, deadline, grade, submission state [ Y for yes/N for no ], teacher's comment ) and the ***GPA*** will be computed and displayed automatically.
 
 ![student_assignment](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/student_assignment.png)
 
@@ -70,8 +63,7 @@
 
 + Student Answer Page ( StudentAnswer.aspx, for student )
 
-> 
-    In this page, students can see the details about their assignment answers or submit their answers. But if the student has submitted the answer before, he or she will not be allowed to update their answers again. The teacher's comment can also be seen in this page ( if has ).
+> In this page, students can see the details about their assignment answers or submit their answers. But if the student has submitted the answer before, he or she will not be allowed to update their answers again. The teacher's comment can also be seen in this page ( if has ).
 
 ![student_answer](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/student_answer.png)
 
@@ -80,8 +72,7 @@
 ### Physical Design
 + Class Diagram
 
-> 
-    It is drawn by NClass 2.04, we have 8 C# classes, corresponding to each front page shown before. For each class, I implement some event functions which can handle all the events ( such as Clicking, DropdownList Changed, Text Changed, RadioButton Changed etc.) taking place in the current page.
+> It is drawn by ***NClass 2.04***, we have 8 ***C#*** classes, corresponding to each front page shown before. For each class, I implement some event functions which can handle all the events ( such as ***Clicking***, ***DropdownList*** Changed, ***Text*** Changed, ***RadioButton*** Changed etc.) taking place in the current page.
 
 ![class_diagram](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/class_diagram.png)
 
@@ -89,19 +80,12 @@
 
 + ER Diagram 
 
-> 
-    
-    In design phase, I firstly find the Student Entity and the Teacher Entity has the same attributes like name, password and email address, which reminds me to use ISA structure to represent.
-    
-    And then, Course Entity records the course ID and the course name. It has both relationship with Student and Teacher, that's why stuid and tid are foreign keys of Course.
-    
-    For Assignment Entity, we set aid as the primary key. This entity has lots of attributes but it still has a constraint with cid of Course. By the way, Assignment Entity will store some important messages like assignment name, which course, how many questions does have, weight, and also deadline.
-    
-    In Question Entity, it records question content and the index of question, aid is a foreign key because I consider that many questions might be related to one assignment so that we can find the exact question if we know about the aid and the q\_index.
-    
-    The Answer Entity has two foreign keys, one is qid and another is stuid because for the same question, we need to know which student has answered it. It is the reason why both foreign keys are necessarily required. Additionally, the content of student's answer and teacher's comment will be recorded, too.
-    
-    The last entity is Submit Entity, this entity stores the grade information, submission statement and teacher's comment about the whole assignment. Submit Entity has a relationship with Student and Assignment because it records all assignment information of each student.
+  + In design phase, I firstly find the ***Student Entity*** and the ***Teacher Entity*** has the same attributes like name, password and email address, which reminds me to use ***ISA*** structure to represent.
+  + And then, ***Course Entity*** records the course ID and the course name. It has both relationship with ***Student*** and ***Teacher***, that's why ***stuid*** and ***tid*** are foreign keys of ***Course***.
+  + For ***Assignment Entity***, we set **aid*** as the primary key. This entity has lots of attributes but it still has a constraint with ***cid*** of ***Course***. By the way, ***Assignment Entity*** will store some important messages like assignment name, which course, how many questions does have, weight, and also deadline.
+  + In ***Question Entity***, it records question content and the index of question, ***aid*** is a foreign key because I consider that many questions might be related to one assignment so that we can find the exact question if we know about the ***aid*** and the ***q_index***.
+  + The ***Answer Entity*** has two foreign keys, one is ***qid*** and another is ***stuid*** because for the same question, we need to know which student has answered it. It is the reason why both foreign keys are necessarily required. Additionally, the content of student's answer and teacher's comment will be recorded, too.
+  + The last entity is ***Submit Entity***, this entity stores the grade information, submission statement and teacher's comment about the whole assignment. ***Submit Entity*** has a relationship with ***Student*** and ***Assignment*** because it records all assignment information of each student.
 
 ![ER_Diagram](https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/ER_Diagram.png)
 
@@ -114,10 +98,10 @@
 ------
 
 ### Features of Design
-+ To be more realistic, I design a dual-login system for both teacher and student, the user can switch the login type to enter the system. After entering the system, the user can click 'logout' button to back to the home page. 
++ To be more realistic, I design a dual-login system for both teacher and student, the user can switch the login type to enter the system. After entering the system, the user can click ***logout*** button to back to the home page. 
 + I allow the user to take more than one courses and the system will display correct information corresponding to the selected course. 
 + Question number of each assignment is not fixed, teachers can add or delete questions if they want.
-+ In **StuOverview.aspx Page}, teacher can reset student's login password directly by clicking **Edit} button and the data will be updated.
++ In ***StuOverview.aspx*** Page, teacher can reset student's login password directly by clicking ***Edit*** button and the data will be updated.
 + The bootstrap framework provides a user-friendly GUI design which is supported at most devices.
 
 ------
@@ -316,8 +300,7 @@
 ```
     
 + In conclusion
->
-    All the parameters of previous insertion methods can be divided into 3 types: new ids ( aid, qid, ansid, subid ), passed by Textbox ( has .Text ), passed by URL ( stuid or tid ). They all can be connected as String Type into SQL. 
+> All the parameters of previous insertion methods can be divided into 3 types: new ids ( aid, qid, ansid, subid ), passed by Textbox ( has .Text ), passed by URL ( stuid or tid ). They all can be connected as String Type into SQL. 
 
 ------
 

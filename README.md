@@ -122,89 +122,84 @@
 **Database Creation**
 
 ```
-    -- create database
-    CREATE DATABASE OSGS
-    ON(
-	    NAME='OSGS',
-	    FILENAME='C:\EX\OSGS.mdf',
-	    SIZE=17MB,
-	    FILEGROWTH=5MB
-    )
-    
-    LOG ON
-    (	
-	    NAME='OSGSLog',
-	    FILENAME='C:\EX\OSGSLog.ldf',
-	    SIZE=5MB,
-	    FILEGROWTH=5MB
-    )
+/* create database */
+CREATE DATABASE OSGS
+ON(
+	NAME='OSGS',
+	FILENAME='C:\OSGS.mdf',
+	SIZE=17MB,
+	FILEGROWTH=5MB
+)
+LOG ON
+(	
+	NAME='OSGSLog',
+	FILENAME='C:\OSGSLog.ldf',
+	SIZE=5MB,
+	FILEGROWTH=5MB
+)
+GO
 ```
 
 **Table Creation**
 
 ```
-    -- create table
-    USE OSGS
-    CREATE TABLE Teacher(
-	    tid varchar(25) NOT NULL PRIMARY KEY,
-	    tName varchar(15) NOT NULL,
-	    psw varchar(15) NOT NULL,
-	    emailAddress varchar(30) NOT NULL
-    )
+/* create table */
+CREATE TABLE Teacher(
+	tid varchar(25) NOT NULL PRIMARY KEY,
+	tName varchar(15) NOT NULL,
+	psw varchar(15) NOT NULL,
+	emailAddress varchar(30) NOT NULL
+)
 
-    CREATE TABLE Student(
-	    stuid varchar(25) NOT NULL PRIMARY KEY,
-	    sName varchar(15) NOT NULL,
-	    psw varchar(15) NOT NULL,
-	    emailAddress varchar(30) NOT NULL
-    )
+CREATE TABLE Student(
+	stuid varchar(25) NOT NULL PRIMARY KEY,
+	sName varchar(15) NOT NULL,
+	psw varchar(15) NOT NULL,
+	emailAddress varchar(30) NOT NULL
+)
 
-    CREATE TABLE Course(
-        indexNumber INT NOT NULL PRIMARY KEY,
-	    cid varchar(10) NOT NULL,
-	    cname varchar(20) NOT NULL,
-	    stuid varchar(25) NOT NULL FOREIGN KEY REFERENCES 
-	    Student(stuid),	
-	    tid varchar(25) NOT NULL FOREIGN KEY REFERENCES 
-	    Teacher(tid)
-    )
+CREATE TABLE Course(
+    indexNumber INT NOT NULL PRIMARY KEY,
+	cid varchar(10) NOT NULL,
+	cname varchar(20) NOT NULL,
+	stuid varchar(25) NOT NULL FOREIGN KEY REFERENCES Student(stuid),	
+	tid varchar(25) NOT NULL FOREIGN KEY REFERENCES Teacher(tid)
+)
 
-    CREATE TABLE Assignment(
-        aid INT NOT NULL PRIMARY KEY,
-	    aname varchar(15) NOT NULL,
-	    cid varchar(10) NOT NULL,
-	    q_number INT NOT NULL DEFAULT 0,
-	    [weight] INT NOT NULL,	
-	    tid varchar(25) NOT NULL FOREIGN KEY REFERENCES 
-	    Teacher(tid),
-	    deadline varchar(20) NOT NULL,	
-    )
+CREATE TABLE Assignment(
+    aid INT NOT NULL PRIMARY KEY,
+	aname varchar(15) NOT NULL,
+	cid varchar(10) NOT NULL,
+	q_number INT NOT NULL DEFAULT 0,
+	[weight] INT NOT NULL,	
+	tid varchar(25) NOT NULL FOREIGN KEY REFERENCES Teacher(tid),
+	deadline varchar(20) NOT NULL,	
+)
 
-    CREATE TABLE Question(
-        qid INT NOT NULL PRIMARY KEY,
-	    q_index INT NOT NULL,
-	    aid INT NOT NULL FOREIGN KEY REFERENCES Assignment(aid),
-	    content varchar(100) DEFAULT NULL
-    )
+CREATE TABLE Question(
+    qid INT NOT NULL PRIMARY KEY,
+	q_index INT NOT NULL,
+	aid INT NOT NULL FOREIGN KEY REFERENCES Assignment(aid),
+	content varchar(100) DEFAULT NULL
+)
 
-    CREATE TABLE Answer(
-        ansid INT NOT NULL PRIMARY KEY,
-	    qid INT NOT NULL FOREIGN KEY REFERENCES Question(qid),
-	    stuid varchar(25) NOT NULL FOREIGN KEY REFERENCES 
-	    Student(stuid),
-	    content varchar(100) DEFAULT NULL,
-	    tcomment varchar(100) DEFAULT NULL
-    )
+CREATE TABLE Answer(
+    ansid INT NOT NULL PRIMARY KEY,
+	qid INT NOT NULL FOREIGN KEY REFERENCES Question(qid),
+	stuid varchar(25) NOT NULL FOREIGN KEY REFERENCES Student(stuid),
+	content varchar(100) DEFAULT NULL,
+	tcomment varchar(100) DEFAULT NULL
+)
 
-    CREATE TABLE Submit(
-        subid INT NOT NULL PRIMARY KEY,
-	    aid INT NOT NULL FOREIGN KEY REFERENCES Assignment(aid),
-	    stuid varchar(25) NOT NULL FOREIGN KEY REFERENCES 
-	    Student(stuid),
-	    grade real DEFAULT 0.0,
-	    comment varchar(100) DEFAULT NULL,
-	    stat varchar(1) NOT NULL DEFAULT 'N'
-    )
+CREATE TABLE Submit(
+    subid INT NOT NULL PRIMARY KEY,
+	aid INT NOT NULL FOREIGN KEY REFERENCES Assignment(aid),
+	stuid varchar(25) NOT NULL FOREIGN KEY REFERENCES Student(stuid),
+	grade real DEFAULT 0.0,
+	comment varchar(100) DEFAULT NULL,
+	stat varchar(1) NOT NULL DEFAULT 'N'
+)
+GO
 ```
 
 **Data Update**
@@ -212,9 +207,11 @@
 >  
     In StuOverview.aspx, the teacher can edit student's information:
 ```
-    UPDATE Student
-    SET sName = @sName, psw=@psw, emailAddress=@emailAddress
-    WHERE stuid = @stuid
+/* update table */
+UPDATE Student
+SET sName = @sName, psw=@psw, emailAddress=@emailAddress
+WHERE stuid = @stuid
+GO
 ```
 
 **Data Query**
@@ -223,16 +220,16 @@
     I use the query of Assignment Management.aspx as an example:
     
 ```
-    SELECT A.aid, A.aname, S.stuid, S.sName, A.weight AS [weight(%)], 
-    A.q_number, A.deadline, SU.stat, SU.grade, SU.comment
-    FROM Assignment AS A
-    JOIN Submit AS SU 
-    ON SU.aid = A.aid 
-    JOIN Course AS C
-    ON C.cid=A.cid AND C.tid = A.tid AND C.cid = @cid AND 
-    C.tid = @tid AND SU.stuid = C.stuid
-    JOIN Student AS S
-    ON S.stuid = C.stuid
+SELECT A.aid, A.aname, S.stuid, S.sName, A.weight AS [weight(%)], 
+A.q_number, A.deadline, SU.stat, SU.grade, SU.comment
+FROM Assignment AS A
+JOIN Submit AS SU 
+ON SU.aid = A.aid 
+JOIN Course AS C
+ON C.cid=A.cid AND C.tid = A.tid AND C.cid = @cid AND 
+C.tid = @tid AND SU.stuid = C.stuid
+JOIN Student AS S
+ON S.stuid = C.stuid
 ```
 
 >   
@@ -246,69 +243,69 @@
 **Data Insertion**
 + SQL Connecting
 ```
-    SqlConnection con = new SqlConnection("Data Source=DESKTOP
-    -KV5M48K;Initial Catalog=OSGS;Integrated Security=True");
-    
-    con.Open();
+SqlConnection con = new SqlConnection("Data Source=DESKTOP
+-KV5M48K;Initial Catalog=OSGS;Integrated Security=True");
+
+con.Open();
 ```
 
 + Insertion Method
 ```
-    // insert, update and delete
-    public void sql_insert(string sql, SqlConnection con)
+// insert, update and delete
+public void sql_insert(string sql, SqlConnection con)
+{
+    SqlCommand cmd = new SqlCommand(sql, con);
+    try
     {
-        SqlCommand cmd = new SqlCommand(sql, con);
-        try
-        {
-            cmd.ExecuteNonQuery();               
-        }
-        catch
-        {
-            halt = true;
-            Response.Write("<script type='text/javascript'>
-            alert('Insert Fail!');</script>");
-        }
-           
+        cmd.ExecuteNonQuery();               
     }
+    catch
+    {
+        halt = true;
+        Response.Write("<script type='text/javascript'>
+        alert('Insert Fail!');</script>");
+    }
+        
+}
 ```
 
 + Insert Question Table
 ```
-    sql_que = "INSERT INTO Question(qid, q_index, aid, content)
-    VALUES (" + qid + ", 1, " + aid + ", '" + Q_one.Text + "')";
+sql_que = "INSERT INTO Question(qid, q_index, aid, content)
+VALUES (" + qid + ", 1, " + aid + ", '" + Q_one.Text + "')";
 ```
     
 + Insert Assignment Table
 ```
-    sql_assign = "INSERT Assignment(aid, aname, cid, q_number, 
-    [weight], tid, deadline) 
-    VALUES(" + aid + ", '" + aname.Text + "', '" + cid.Text + 
-    "', " + num.ToString() +", " + weight.Text +", '" + tid + 
-    "', '" + ddl.Text +"')";
+sql_assign = "INSERT INTO Assignment(aid, aname, cid, q_number, 
+[weight], tid, deadline) 
+VALUES(" + aid + ", '" + aname.Text + "', '" + cid.Text + 
+"', " + num.ToString() +", " + weight.Text +", '" + tid + 
+"', '" + ddl.Text +"')";
 ```
     
 + Insert Answer Table
 ```
-    sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) 
-    VALUES(" + ansid.ToString() + ", " + qid_1 + ", '" + stuid 
-    +"', '" + ans.Text + "', '')";
+sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) 
+VALUES(" + ansid.ToString() + ", " + qid_1 + ", '" + stuid 
++"', '" + ans.Text + "', '')";
 ```
     
 + Insert Submit Table
 ```
-    sql1 = "INSERT Submit(subid, aid, stuid, grade, comment, 
-    stat) 
-    VALUES(" + subid.ToString() + ", " + aid + ", '" +
-    tmp[0].ToString() + "', 0.0, ' ', 'N')";
+sql1 = "INSERT INTO Submit(subid, aid, stuid, grade, comment, 
+stat) 
+VALUES(" + subid.ToString() + ", " + aid + ", '" +
+tmp[0].ToString() + "', 0.0, ' ', 'N')";
 ```
     
 + How to assign a new ID as primary key ( like new aid, qid, ansid, subid )
 ```
-    // get the largest ansid
-    sql = "SELECT TOP 1 ansid FROM Answer ORDER BY ansid DESC";
-    ansid = int.Parse(sql_command(sql, con));
-    
-    ansid++; // a new ansid
+// get the largest ansid
+sql = "SELECT TOP 1 ansid FROM Answer ORDER BY ansid DESC";
+ansid = int.Parse(sql_command(sql, con));
+
+ansid++; // a new ansid
 ```
     
 + In conclusion

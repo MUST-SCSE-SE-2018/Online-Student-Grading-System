@@ -407,37 +407,37 @@ namespace OSGS
             // insert data
             if (!ans.Text.Equals("")) {
                 ansid++;
-                sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_1 + ", '" + stuid +"', '" + ans.Text + "', '')";
+                sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_1 + ", '" + stuid +"', '" + ans.Text + "', '')";
                 sql_insert(sql, con);
             }
             if (!ans_two.Text.Equals(""))
             {
                 ansid++;
-                sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_2 + ", '" + stuid + "', '" + ans_two.Text + "', '')";
+                sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_2 + ", '" + stuid + "', '" + ans_two.Text + "', '')";
                 sql_insert(sql, con);
             }
             if (!ans_three.Text.Equals(""))
             {
                 ansid++;
-                sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_3 + ", '" + stuid + "', '" + ans_three.Text + "', '')";
+                sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_3 + ", '" + stuid + "', '" + ans_three.Text + "', '')";
                 sql_insert(sql, con);
             }
             if (!ans_four.Text.Equals(""))
             {
                 ansid++;
-                sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_4 + ", '" + stuid + "', '" + ans_four.Text + "', '')";
+                sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_4 + ", '" + stuid + "', '" + ans_four.Text + "', '')";
                 sql_insert(sql, con);
             }
             if (!ans_five.Text.Equals(""))
             {
                 ansid++;
-                sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_5 + ", '" + stuid + "', '" + ans_five.Text + "', '')";
+                sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_5 + ", '" + stuid + "', '" + ans_five.Text + "', '')";
                 sql_insert(sql, con);
             }
             if (!ans_six.Text.Equals(""))
             {
                 ansid++;
-                sql = "INSERT Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_6 + ", '" + stuid + "', '" + ans_six.Text + "', '')";
+                sql = "INSERT INTO Answer(ansid, qid, stuid, content, tcomment) VALUES(" + ansid.ToString() + ", " + qid_6 + ", '" + stuid + "', '" + ans_six.Text + "', '')";
                 sql_insert(sql, con);
             }
 

@@ -125,7 +125,7 @@ namespace OSGS
                 num++; 
             }
 
-            string sql_assign = "INSERT Assignment(aid, aname, cid, q_number, [weight], tid, deadline) VALUES(" + aid + ", '" +
+            string sql_assign = "INSERT INTO Assignment(aid, aname, cid, q_number, [weight], tid, deadline) VALUES(" + aid + ", '" +
                 aname.Text + "', '" + cid.Text + "', " + num.ToString() +", " + weight.Text +", '" + tid + "', '" + ddl.Text +"')";
 
             string sql = sql_assign + ";" + sql_que;
@@ -170,7 +170,7 @@ namespace OSGS
                 {
                     IDataRecord tmp = (IDataRecord)reader;
                     subid++;
-                    string sql1 = "INSERT Submit(subid, aid, stuid, grade, comment, stat) VALUES(" + subid.ToString() + ", " + aid + ", '" + tmp[0].ToString() + "', 0.0, ' ', 'N')";
+                    string sql1 = "INSERT INTO Submit(subid, aid, stuid, grade, comment, stat) VALUES(" + subid.ToString() + ", " + aid + ", '" + tmp[0].ToString() + "', 0.0, ' ', 'N')";
                     SqlCommand cmd4 = new SqlCommand(sql1, conn);
                     try
                     {

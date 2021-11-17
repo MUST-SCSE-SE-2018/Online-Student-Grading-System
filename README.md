@@ -69,6 +69,18 @@
 
 ------
 
+### Development Environment
+
+|     Description     |                    Specification                    |
+| :-----------------: | :-------------------------------------------------: |
+|       System        |                     Windows 10                      |
+| Front-end Framework |                    ASP.NET 4.7.2                    |
+|  Back-end Language  |                         C#                          |
+|         IDE         |        Visual Studio Community 2019 v16.7.5         |
+|    Database Tool    | SQL Server Management Studio ( SSMS ) v15.0.18358.0 |
+
+------
+
 ### Physical Design
 + Class Diagram
 
@@ -301,18 +313,6 @@
     
 + In conclusion
 > All the parameters of previous insertion methods can be divided into 3 types: new ids ( aid, qid, ansid, subid ), passed by Textbox ( has .Text ), passed by URL ( stuid or tid ). They all can be connected as String Type into SQL. 
-
-------
-
-### Development Environment
-
-|     Description     |                    Specification                    |
-| :-----------------: | :-------------------------------------------------: |
-|       System        |                     Windows 10                      |
-| Front-end Framework |                    ASP.NET 4.7.2                    |
-|  Back-end Language  |                         C#                          |
-|         IDE         |        Visual Studio Community 2019 v16.7.5         |
-|    Database Tool    | SQL Server Management Studio ( SSMS ) v15.0.18358.0 |
 
 ------
 

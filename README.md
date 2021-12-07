@@ -77,7 +77,12 @@
 | Front-end Framework |                    ASP.NET 4.7.2                    |
 |  Back-end Language  |                         C#                          |
 |         IDE         |        Visual Studio Community 2019 v16.7.5         |
-|    Database Tool    | SQL Server Management Studio ( SSMS ) v15.0.18358.0 |
+|    Database Tool    | SQL Server Management Studio ( SSMS ) v18.7.1       |
+
+------
+
+### Deployment
++ [How to deploy?](https://github.com/KennardWang/Online-Student-Grading-System/issues/1)
 
 ------
 

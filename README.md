@@ -325,8 +325,8 @@ ansid++; // a new ansid
 
 ### License  
 + [MIT License](https://github.com/KennardWang/Online-Student-Grading-System/blob/master/LICENSE)
+
 ------
 
 ### Author
 + Kennard Wang ( 2021.1.1 )
-------

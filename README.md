@@ -1,5 +1,10 @@
 # Online-Student-Grading-System
 
+> Database design is an interesting and meaningful work. After finishing the course CS108, Kennard 
+> wanted to help his instructor Sllo to design an online student grading system.
+
+------
+
 ### Demo
 + Login Page ( Login.aspx )
 

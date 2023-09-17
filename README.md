@@ -1,9 +1,19 @@
 # Online-Student-Grading-System
 
 <div align="center">
-  <img src="https://img.shields.io/github/stars/KennardWang/Online-Student-Grading-System" />
-  <img src="https://img.shields.io/github/license/KennardWang/Online-Student-Grading-System" />
-  <img src="https://img.shields.io/badge/maintenance-No-red" />
+  <img src="https://img.shields.io/github/stars/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=FDEE21" />
+  &nbsp;
+  <img src="https://img.shields.io/github/forks/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/windows-0078D6?logo=windows&logoColor=white&style=for-the-badge" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white" />
+  &nbsp;
+  <img src="https://img.shields.io/badge/Microsoft_SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" />
 </div>
 
 <br>
@@ -497,7 +507,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
 ## Maintainers
 
-[@KennardWang](https://github.com/KennardWang).
+![badge](https://img.shields.io/badge/maintenance-NO-EF2D5E) [@KennardWang](https://github.com/KennardWang)
 
 
 
@@ -509,4 +519,4 @@ Feel free to [open an issue](https://github.com/KennardWang/Online-Student-Gradi
 
 ## License
 
-[MIT](LICENSE) © Kennard Wang. ( 2021.1.1 )
+[![license](https://img.shields.io/github/license/KennardWang/Online-Student-Grading-System)](LICENSE) © Kennard Wang ( 2021.1.1 )

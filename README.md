@@ -1,10 +1,15 @@
 # Online-Student-Grading-System
 
 <div align="center">
-  <img src="https://img.shields.io/github/stars/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=FDEE21" />
+
+  [![description](https://img.shields.io/badge/project-Individual-1F1F1F?style=for-the-badge)](https://github.com/KennardWang/Online-Student-Grading-System)
   &nbsp;
-  <img src="https://img.shields.io/github/forks/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=white" />
+  [![stars](https://img.shields.io/github/stars/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=FDEE21)](https://github.com/KennardWang/Online-Student-Grading-System/stargazers)
   &nbsp;
+  [![forks](https://img.shields.io/github/forks/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=white)](https://github.com/KennardWang/Online-Student-Grading-System/forks)
+  &nbsp;
+  [![contributors](https://img.shields.io/github/contributors/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=8BC0D0)](https://github.com/KennardWang/Online-Student-Grading-System/graphs/contributors)
+  
   <img src="https://img.shields.io/badge/windows-0078D6?logo=windows&logoColor=white&style=for-the-badge" />
   &nbsp;
   <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" />

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  [![description](https://img.shields.io/badge/project-Individual-1F1F1F?style=for-the-badge)](https://github.com/KennardWang/Online-Student-Grading-System)
+  [![description](https://img.shields.io/badge/project-Individual-FFB7C5?style=for-the-badge)](https://github.com/KennardWang/Online-Student-Grading-System)
   &nbsp;
   [![stars](https://img.shields.io/github/stars/KennardWang/Online-Student-Grading-System?style=for-the-badge&color=FDEE21)](https://github.com/KennardWang/Online-Student-Grading-System/stargazers)
   &nbsp;
@@ -178,9 +178,9 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-     <img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/login_teacher.png" width="40%" />
+     <img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/login_teacher.png" width="40%" />
      &nbsp;
-     <img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/login_student.png" width="40%" />
+     <img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/login_student.png" width="40%" />
   </div>
 
 
@@ -192,7 +192,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/student_account_management.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/student_account_management.png" width="70%" />
   </div>
 
 
@@ -204,7 +204,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/assignment_management.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/assignment_management.png" width="70%" />
   </div>
 
 
@@ -216,7 +216,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/assignment_marking.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/assignment_marking.png" width="70%" />
   </div>
 
 
@@ -228,7 +228,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/assignment_add.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/assignment_add.png" width="70%" />
   </div>
 
 
@@ -240,9 +240,9 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-     <img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/register_course.png" width="40%" />
+     <img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/register_course.png" width="40%" />
      &nbsp;
-     <img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/register_student.png" width="40%" />
+     <img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/register_student.png" width="40%" />
   </div>
 
 
@@ -254,7 +254,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/student_assignment.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/student_assignment.png" width="70%" />
   </div>
 
 <br>
@@ -265,7 +265,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/student_answer.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/student_answer.png" width="70%" />
   </div>
 
 
@@ -286,7 +286,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/class_diagram.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/class_diagram.png" width="70%" />
   </div>
 
 <br>
@@ -302,7 +302,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/ER_Diagram.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/ER_Diagram.png" width="70%" />
   </div>
 
 <br>
@@ -311,7 +311,7 @@ It is a project of MUST course ***CS108-Advanced Database System***, which is a 
 
   <br>
   <div align=center>
-  	<img src="https://kennardwang.github.io/ImageSource/Online-Student-Grading-System/schema.png" width="70%" />
+  	<img src="https://kennardwang.github.io/Image-Source/Online-Student-Grading-System/schema.png" width="70%" />
   </div>
 
 
